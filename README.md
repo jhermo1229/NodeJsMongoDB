@@ -7,3 +7,5 @@ This whole folder should be saved inside XAMPP > HTDOCS folder to be able to acc
 Can be tested using POSTMAN - http://localhost/php/api/post/read.php
 
 This will be used for an assignment for PROG8185 - VUE and PHP backend
+
+test commit
