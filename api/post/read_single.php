@@ -26,6 +26,7 @@ $post_arr = array(
     'product_name' => $post ->product_name,
     'description' => $post->description,
     'image_url' => $post->url,
+    'cost' => $post->cost
 );
 
 
