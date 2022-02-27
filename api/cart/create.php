@@ -3,33 +3,35 @@
 //Headers
 header('Access-Control-Allow-Origin: *');
 header('Content-Type: application/json');
-header('Access-Control-Allow-Methods: DELETE');
+header('Access-Control-Allow-Methods: cart');
 header('Access-Control-Allow-Headers: Access-Control-Allow-Headers,Content-Type,
 Access-Control-Allow-Methods,Authorization,X-Requested-With');
 
 include_once '../../config/Database.php';
-include_once '../../models/Products.php';
+include_once '../../models/Cart.php';
 
 //Instantiate DB and connect
 
 $database = new Database();
 $db = $database->connect();
 
-//instantiate products object
-$products = new Products($db);
-// Get raw posted data
+//instantiate cart object
+$cart = new Cart($db);
+// Get raw carted data
 $data = json_decode(file_get_contents("php://input"));
 
-// set ID to update
-$products->id = $data->id;
+$cart->product_id = $data->product_id;
+$cart->user_id = $data->user_id;
+$cart->quantity = $data->quantity;
+$cart->total_cost = $data->total_cost;
 
-// Create Post
-if($products->delete()) {
+// Create cart
+if($cart->create()) {
 echo json_encode(
-    array('message' => 'Product Deleted')
+    array('message' => 'Cart Created')
 );
 }else{
     echo json_encode(
-        array('message' => 'Product not Deleted')
+        array('message' => 'Cart not Created')
     );
 }

@@ -12,24 +12,23 @@ include_once '../../models/Products.php';
 $database = new Database();
 $db = $database->connect();
 
-//instantiate post object
-$post = new Post($db);
+//instantiate products object
+$products = new Products($db);
 
-$post->id = isset($_GET['id']) ? $_GET['id'] : die();
+$products->id = isset($_GET['id']) ? $_GET['id'] : die();
 
-echo($_GET['id']);
 
-$post->read_single();
+$products->read_single();
 
-$post_arr = array(
-    'id' => $post->id,
-    'product_name' => $post ->product_name,
-    'description' => $post->description,
-    'image_url' => $post->url,
-    'cost' => $post->cost
+$products_arr = array(
+    'id' => $products->id,
+    'product_name' => $products ->product_name,
+    'description' => $products->description,
+    'image_url' => $products->url,
+    'cost' => $products->cost
 );
 
 
     //Turn to JSON
-    print_r(json_encode($post_arr));
+    print_r(json_encode($products_arr));
 

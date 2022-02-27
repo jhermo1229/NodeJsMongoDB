@@ -1,17 +1,16 @@
 <?php
-    class Products {
+    class PurchaseHistory {
 
         private $conn;
-        private $table = 'products';
+        private $table = 'purchase_history';
 
 
         //properties
 
         public $id;
-        public $product_name;
-        public $description;
-        public $url;
-        public $cost;
+        public $user_id;
+        public $cart_id;
+        public $purchase_success;
 
         //constructor with db
         public function __construct($db) {
@@ -23,15 +22,14 @@
             //create query
 
             $query = 'SELECT 
-                        c.id,
-                        c.product_name,
-                        c.description,
-                        c.image_url,
-                        c.cost
+                        id,
+                        user_id,
+                        cart_id,
+                        purchase_success
                         FROM
-                        ' .$this->table . ' c
+                        ' .$this->table .'
                         ORDER BY
-                            c.id';
+                            id';
 
 
             //Prepared statement
@@ -48,15 +46,14 @@
             //create query
 
             $query = 'SELECT 
-                        c.id,
-                        c.product_name,
-                        c.description,
-                        c.image_url,
-                        c.cost
+                        id,
+                        user_id,
+                        cart_id,
+                        purchase_success
                         FROM
-                        ' .$this->table . ' c
+                        ' .$this->table .'
                         WHERE 
-                            c.id = ?
+                            id = ?
                         LIMIT 0,1';
 
 
@@ -73,38 +70,32 @@
 
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
-            $this->id = $row['id'];
-            $this->product_name = $row['product_name'];
-            $this->description = $row['description'];
-            $this->url = $row['image_url'];
-            $this->cost = $row['cost'];
-
-            
+            $this->id = $row['id'];            
+            $this->user_id = $row['user_id'];
+            $this->cart_id = $row['cart_id'];
+            $this->purchase_success = $row['purchase_success'];        
         }
 
         public function create() {
 
             $query = 'INSERT INTO ' . $this->table . '
             SET
-                description = :description,
-                product_name = :productName,
-                image_url = :url,
-                cost = :cost';
+                user_id = :user_id,
+                cart_id = :cart_id,
+                purchase_success = :purchase_success';
 
             $stmt = $this->conn->prepare($query);
 
             //Clean data
             // $this->id = htmlspecialchars(strip_tags($this->id));
-            $this->productName = htmlspecialchars(strip_tags($this->productName));
-            $this->description = htmlspecialchars(strip_tags($this->description));
-            $this->url = htmlspecialchars(strip_tags($this->url));
-            $this->cost = htmlspecialchars(strip_tags($this->cost));
+            $this->user_id = htmlspecialchars(strip_tags($this->user_id));
+            $this->cart_id = htmlspecialchars(strip_tags($this->cart_id));
+            $this->purchase_success = htmlspecialchars(strip_tags($this->purchase_success));
 
             // $stmt->bindParam(':id', $this->id);
-            $stmt->bindParam(':productName', $this->productName);
-            $stmt->bindParam(':description', $this->description);
-            $stmt->bindParam(':url', $this->url);
-            $stmt->bindParam(':cost', $this->cost);
+            $stmt->bindParam(':user_id', $this->user_id);
+            $stmt->bindParam(':cart_id', $this->cart_id);
+            $stmt->bindParam(':purchase_success', $this->purchase_success);
 
 
             if($stmt->execute()){
@@ -122,27 +113,26 @@
 
             $query = 'UPDATE ' . $this->table . '
             SET
-                description = :description,
-                product_name = :productName,
-                image_url = :url,
-                cost = :cost
-                WHERE
+            user_id = :user_id,
+            cart_id = :cart_id,
+            purchase_success = :purchase_success
+            WHERE
                 id = :id';
+            
 
             $stmt = $this->conn->prepare($query);
 
+
             //Clean data
-            $this->productName = htmlspecialchars(strip_tags($this->productName));
-            $this->description = htmlspecialchars(strip_tags($this->description));
-            $this->url = htmlspecialchars(strip_tags($this->url));
-            $this->cost = htmlspecialchars(strip_tags($this->cost));
-            $this->id = htmlspecialchars(strip_tags($this->id));
+            // $this->id = htmlspecialchars(strip_tags($this->id));
+            $this->user_id = htmlspecialchars(strip_tags($this->user_id));
+            $this->cart_id = htmlspecialchars(strip_tags($this->cart_id));
+            $this->purchase_success = htmlspecialchars(strip_tags($this->purchase_success));
 
             $stmt->bindParam(':id', $this->id);
-            $stmt->bindParam(':productName', $this->productName);
-            $stmt->bindParam(':description', $this->description);
-            $stmt->bindParam(':url', $this->url);
-            $stmt->bindParam(':cost', $this->cost);
+            $stmt->bindParam(':user_id', $this->user_id);
+            $stmt->bindParam(':cart_id', $this->cart_id);
+            $stmt->bindParam(':purchase_success', $this->purchase_success);
 
 
             if($stmt->execute()){

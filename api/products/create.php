@@ -3,7 +3,7 @@
 //Headers
 header('Access-Control-Allow-Origin: *');
 header('Content-Type: application/json');
-header('Access-Control-Allow-Methods: POST');
+header('Access-Control-Allow-Methods: products');
 header('Access-Control-Allow-Headers: Access-Control-Allow-Headers,Content-Type,
 Access-Control-Allow-Methods,Authorization,X-Requested-With');
 
@@ -15,24 +15,23 @@ include_once '../../models/Products.php';
 $database = new Database();
 $db = $database->connect();
 
-//instantiate post object
-$post = new Post($db);
-echo(">>>>>>>>>>>>>>>>.");
-// Get raw posted data
+//instantiate products object
+$products = new Products($db);
+// Get raw productsed data
 $data = json_decode(file_get_contents("php://input"));
 
-$post->description = $data->description;
-$post->productName = $data->product_name;
-$post->url = $data->image_url;
-$post->cost = $data->cost;
+$products->description = $data->description;
+$products->productName = $data->product_name;
+$products->url = $data->image_url;
+$products->cost = $data->cost;
 
-// Create Post
-if($post->create()) {
+// Create products
+if($products->create()) {
 echo json_encode(
-    array('message' => 'Post Created')
+    array('message' => 'Product Created')
 );
 }else{
     echo json_encode(
-        array('message' => 'Post not Created')
+        array('message' => 'Product not Created')
     );
 }

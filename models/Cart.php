@@ -1,17 +1,17 @@
 <?php
-    class Products {
+    class Cart {
 
         private $conn;
-        private $table = 'products';
+        private $table = 'cart';
 
 
         //properties
 
         public $id;
-        public $product_name;
-        public $description;
-        public $url;
-        public $cost;
+        public $product_id;
+        public $user_id;
+        public $quantity;
+        public $total_cost;
 
         //constructor with db
         public function __construct($db) {
@@ -23,15 +23,15 @@
             //create query
 
             $query = 'SELECT 
-                        c.id,
-                        c.product_name,
-                        c.description,
-                        c.image_url,
-                        c.cost
+                        id,
+                        product_id,
+                        user_id,
+                        quantity,
+                        total_cost
                         FROM
-                        ' .$this->table . ' c
+                        ' .$this->table .'
                         ORDER BY
-                            c.id';
+                            id';
 
 
             //Prepared statement
@@ -48,15 +48,15 @@
             //create query
 
             $query = 'SELECT 
-                        c.id,
-                        c.product_name,
-                        c.description,
-                        c.image_url,
-                        c.cost
+                        id,
+                        product_id,
+                        user_id,
+                        quantity,
+                        total_cost
                         FROM
-                        ' .$this->table . ' c
+                        ' .$this->table .'
                         WHERE 
-                            c.id = ?
+                            id = ?
                         LIMIT 0,1';
 
 
@@ -73,38 +73,36 @@
 
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
-            $this->id = $row['id'];
-            $this->product_name = $row['product_name'];
-            $this->description = $row['description'];
-            $this->url = $row['image_url'];
-            $this->cost = $row['cost'];
-
-            
+            $this->id = $row['id'];            
+            $this->product_id = $row['product_id'];
+            $this->user_id = $row['user_id'];
+            $this->quantity = $row['quantity'];
+            $this->total_cost = $row['total_cost'];            
         }
 
         public function create() {
 
             $query = 'INSERT INTO ' . $this->table . '
             SET
-                description = :description,
-                product_name = :productName,
-                image_url = :url,
-                cost = :cost';
+                product_id = :product_id,
+                user_id = :user_id,
+                quantity = :quantity,
+                total_cost = :total_cost';
 
             $stmt = $this->conn->prepare($query);
 
             //Clean data
             // $this->id = htmlspecialchars(strip_tags($this->id));
-            $this->productName = htmlspecialchars(strip_tags($this->productName));
-            $this->description = htmlspecialchars(strip_tags($this->description));
-            $this->url = htmlspecialchars(strip_tags($this->url));
-            $this->cost = htmlspecialchars(strip_tags($this->cost));
+            $this->product_id = htmlspecialchars(strip_tags($this->product_id));
+            $this->user_id = htmlspecialchars(strip_tags($this->user_id));
+            $this->quantity = htmlspecialchars(strip_tags($this->quantity));
+            $this->total_cost = htmlspecialchars(strip_tags($this->total_cost));
 
             // $stmt->bindParam(':id', $this->id);
-            $stmt->bindParam(':productName', $this->productName);
-            $stmt->bindParam(':description', $this->description);
-            $stmt->bindParam(':url', $this->url);
-            $stmt->bindParam(':cost', $this->cost);
+            $stmt->bindParam(':product_id', $this->product_id);
+            $stmt->bindParam(':user_id', $this->user_id);
+            $stmt->bindParam(':quantity', $this->quantity);
+            $stmt->bindParam(':total_cost', $this->total_cost);
 
 
             if($stmt->execute()){
@@ -122,27 +120,29 @@
 
             $query = 'UPDATE ' . $this->table . '
             SET
-                description = :description,
-                product_name = :productName,
-                image_url = :url,
-                cost = :cost
-                WHERE
+            product_id = :product_id,
+            user_id = :user_id,
+            quantity = :quantity,
+            total_cost = :total_cost
+            WHERE
                 id = :id';
+            
 
             $stmt = $this->conn->prepare($query);
 
+
             //Clean data
-            $this->productName = htmlspecialchars(strip_tags($this->productName));
-            $this->description = htmlspecialchars(strip_tags($this->description));
-            $this->url = htmlspecialchars(strip_tags($this->url));
-            $this->cost = htmlspecialchars(strip_tags($this->cost));
-            $this->id = htmlspecialchars(strip_tags($this->id));
+            // $this->id = htmlspecialchars(strip_tags($this->id));
+            $this->product_id = htmlspecialchars(strip_tags($this->product_id));
+            $this->user_id = htmlspecialchars(strip_tags($this->user_id));
+            $this->quantity = htmlspecialchars(strip_tags($this->quantity));
+            $this->total_cost = htmlspecialchars(strip_tags($this->total_cost));
 
             $stmt->bindParam(':id', $this->id);
-            $stmt->bindParam(':productName', $this->productName);
-            $stmt->bindParam(':description', $this->description);
-            $stmt->bindParam(':url', $this->url);
-            $stmt->bindParam(':cost', $this->cost);
+            $stmt->bindParam(':product_id', $this->product_id);
+            $stmt->bindParam(':user_id', $this->user_id);
+            $stmt->bindParam(':quantity', $this->quantity);
+            $stmt->bindParam(':total_cost', $this->total_cost);
 
 
             if($stmt->execute()){

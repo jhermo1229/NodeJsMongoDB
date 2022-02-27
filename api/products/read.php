@@ -12,39 +12,40 @@ include_once '../../models/Products.php';
 $database = new Database();
 $db = $database->connect();
 
-//instantiate post object
-$post = new Post($db);
+//instantiate products object
+$products = new Products($db);
 
-//Blog post query
+//Blog products query
 
-$result = $post->read();
+$result = $products->read();
 //Get row count
 $num = $result->rowCount();
 
-// Check if any posts
+// Check if any productss
 if($num > 0){
-//Post array
-    $posts_arr = array();
-    $posts_arr['data'] = array();
+//products array
+    $products_arr = array();
+    $products_arr['data'] = array();
 
     while($row = $result->fetch(PDO::FETCH_ASSOC)){
             extract($row);
 
-            $post_item = array(
+            $products_item = array(
                 'id' => $id,
                 'product_name' => $product_name,
                 'description' => $description,
-                'image_url' => $url
+                'image_url' => $url,    
+                'cost' => $cost
             );
 
             // push to "data"
-            array_push($posts_arr['data'], $post_item);
+            array_push($products_arr['data'], $products_item);
 
     }
 
     //Turn to JSON
-    echo json_encode($posts_arr);
+    echo json_encode($products_arr);
 
 }else{
-    echo json_encode(array('message' => 'No post found'));
+    echo json_encode(array('message' => 'No products found'));
 }
