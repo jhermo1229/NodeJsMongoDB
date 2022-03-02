@@ -24,7 +24,7 @@ $products_arr = array(
     'id' => $products->id,
     'product_name' => $products ->product_name,
     'description' => $products->description,
-    'image_url' => $products->url,
+    'image_url' => $products->image_url,
     'cost' => $products->cost
 );
 

@@ -34,7 +34,7 @@ if($num > 0){
                 'id' => $id,
                 'product_name' => $product_name,
                 'description' => $description,
-                'image_url' => $url,    
+                'image_url' => $image_url,    
                 'cost' => $cost
             );
 

@@ -10,7 +10,7 @@
         public $id;
         public $product_name;
         public $description;
-        public $url;
+        public $image_url;
         public $cost;
 
         //constructor with db
@@ -76,7 +76,7 @@
             $this->id = $row['id'];
             $this->product_name = $row['product_name'];
             $this->description = $row['description'];
-            $this->url = $row['image_url'];
+            $this->image_url = $row['image_url'];
             $this->cost = $row['cost'];
 
             
