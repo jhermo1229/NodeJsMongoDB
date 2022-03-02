@@ -1,0 +1,197 @@
+{
+	"id": "43d1a81f-6738-4f16-9ace-ce3049a066f8",
+	"name": "Comments_Collection",
+	"timestamp": "2022-03-02T17:56:58.635Z",
+	"collection_id": "19650069-44f25cec-545c-4b62-adf4-dc6a139fda5d",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 9,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "7b7fe6af-74a5-4c75-b354-aa372af154cd",
+			"name": "ALL",
+			"url": "http://localhost/eCommercePhp/api/comments/read.php",
+			"time": 7,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"get all data - 200": true,
+				"check if array": true,
+				"check if value is correct": true,
+				"check if response has string requirement": true
+			},
+			"testPassFailCounts": {
+				"get all data - 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"check if array": {
+					"pass": 1,
+					"fail": 0
+				},
+				"check if value is correct": {
+					"pass": 1,
+					"fail": 0
+				},
+				"check if response has string requirement": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				7
+			],
+			"allTests": [
+				{
+					"get all data - 200": true,
+					"check if array": true,
+					"check if value is correct": true,
+					"check if response has string requirement": true
+				}
+			]
+		},
+		{
+			"id": "e8e4f79d-a848-4281-894b-33d5c1a54285",
+			"name": "CREATE COMMENT",
+			"url": "http://localhost/eCommercePhp/api/comments/create.php",
+			"time": 13,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Post - 200": true
+			},
+			"testPassFailCounts": {
+				"Post - 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				13
+			],
+			"allTests": [
+				{
+					"Post - 200": true
+				}
+			]
+		},
+		{
+			"id": "4c1289cc-df8c-4f91-8633-cf71ae819dee",
+			"name": "GET WITH PARAMETER",
+			"url": "http://localhost/eCommercePhp/api/comments/read_single.php?id=2",
+			"time": 5,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"get all data - 200": true,
+				"check if response has string requirement": true
+			},
+			"testPassFailCounts": {
+				"get all data - 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"check if response has string requirement": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"get all data - 200": true,
+					"check if response has string requirement": true
+				}
+			]
+		},
+		{
+			"id": "2252aec9-e8a6-4e31-910e-0489db9be660",
+			"name": "UPDATE COMMENTS",
+			"url": "http://localhost/eCommercePhp/api/comments/update.php",
+			"time": 5,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Update - 200": true
+			},
+			"testPassFailCounts": {
+				"Update - 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Update - 200": true
+				}
+			]
+		},
+		{
+			"id": "79cf9644-39c1-4f63-9335-b1918a0f9484",
+			"name": "DELETE COMMENTS",
+			"url": "http://localhost/eCommercePhp/api/comments/delete.php",
+			"time": 6,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Update - 200": true
+			},
+			"testPassFailCounts": {
+				"Update - 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				6
+			],
+			"allTests": [
+				{
+					"Update - 200": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 36,
+	"collection": {
+		"requests": [
+			{
+				"id": "7b7fe6af-74a5-4c75-b354-aa372af154cd",
+				"method": "GET"
+			},
+			{
+				"id": "e8e4f79d-a848-4281-894b-33d5c1a54285",
+				"method": "POST"
+			},
+			{
+				"id": "4c1289cc-df8c-4f91-8633-cf71ae819dee",
+				"method": "GET"
+			},
+			{
+				"id": "2252aec9-e8a6-4e31-910e-0489db9be660",
+				"method": "PUT"
+			},
+			{
+				"id": "79cf9644-39c1-4f63-9335-b1918a0f9484",
+				"method": "DELETE"
+			}
+		]
+	}
+}

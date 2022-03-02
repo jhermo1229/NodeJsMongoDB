@@ -1,0 +1,209 @@
+{
+	"id": "c7dccc61-b716-4240-a39f-b8a8828e59ee",
+	"name": "Cart_Collection",
+	"timestamp": "2022-03-02T17:55:53.076Z",
+	"collection_id": "19650069-cd539d37-a126-4d0f-8886-bc5292e1a4d9",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 11,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "ae84cafd-6f83-43cf-9727-6d886a7c0e93",
+			"name": "ALL",
+			"url": "http://localhost/eCommercePhp/api/cart/read.php",
+			"time": 7,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"get all data - 200": true,
+				"check if array": true,
+				"check if value is correct": true,
+				"check if response has string requirement": true,
+				"check if response has correct data type": true
+			},
+			"testPassFailCounts": {
+				"get all data - 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"check if array": {
+					"pass": 1,
+					"fail": 0
+				},
+				"check if value is correct": {
+					"pass": 1,
+					"fail": 0
+				},
+				"check if response has string requirement": {
+					"pass": 1,
+					"fail": 0
+				},
+				"check if response has correct data type": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				7
+			],
+			"allTests": [
+				{
+					"get all data - 200": true,
+					"check if array": true,
+					"check if value is correct": true,
+					"check if response has string requirement": true,
+					"check if response has correct data type": true
+				}
+			]
+		},
+		{
+			"id": "02d93dfa-60ff-4174-acb2-38077c79ff85",
+			"name": "CREATE CART",
+			"url": "http://localhost/eCommercePhp/api/cart/create.php",
+			"time": 7,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Successful Post Request": true
+			},
+			"testPassFailCounts": {
+				"Successful Post Request": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				7
+			],
+			"allTests": [
+				{
+					"Successful Post Request": true
+				}
+			]
+		},
+		{
+			"id": "bbd4879e-a624-44a3-b42a-c876b50fc23e",
+			"name": "GET WITH PARAMETER",
+			"url": "http://localhost/eCommercePhp/api/cart/read_single.php?id=6",
+			"time": 5,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"get data - 200": true,
+				"check if response has string requirement": true,
+				"check if response has correct data type": true
+			},
+			"testPassFailCounts": {
+				"get data - 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"check if response has string requirement": {
+					"pass": 1,
+					"fail": 0
+				},
+				"check if response has correct data type": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"get data - 200": true,
+					"check if response has string requirement": true,
+					"check if response has correct data type": true
+				}
+			]
+		},
+		{
+			"id": "eebdbdb4-95eb-4168-bec8-8f45c7570cab",
+			"name": "UPDATE CART",
+			"url": "http://localhost/eCommercePhp/api/cart/update.php",
+			"time": 5,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"update data - 200": true
+			},
+			"testPassFailCounts": {
+				"update data - 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"update data - 200": true
+				}
+			]
+		},
+		{
+			"id": "2465d4de-7606-4efd-a1b3-3c6f8dd940dc",
+			"name": "DELETE CART",
+			"url": "http://localhost/eCommercePhp/api/cart/delete.php",
+			"time": 7,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"delete data - 200": true
+			},
+			"testPassFailCounts": {
+				"delete data - 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				7
+			],
+			"allTests": [
+				{
+					"delete data - 200": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 31,
+	"collection": {
+		"requests": [
+			{
+				"id": "ae84cafd-6f83-43cf-9727-6d886a7c0e93",
+				"method": "GET"
+			},
+			{
+				"id": "02d93dfa-60ff-4174-acb2-38077c79ff85",
+				"method": "POST"
+			},
+			{
+				"id": "bbd4879e-a624-44a3-b42a-c876b50fc23e",
+				"method": "GET"
+			},
+			{
+				"id": "eebdbdb4-95eb-4168-bec8-8f45c7570cab",
+				"method": "PUT"
+			},
+			{
+				"id": "2465d4de-7606-4efd-a1b3-3c6f8dd940dc",
+				"method": "DELETE"
+			}
+		]
+	}
+}

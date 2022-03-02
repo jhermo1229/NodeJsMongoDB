@@ -1,0 +1,209 @@
+{
+	"id": "249d55c7-9797-4700-9619-7dc29a794c49",
+	"name": "User_Collection",
+	"timestamp": "2022-03-02T17:59:17.718Z",
+	"collection_id": "19650069-4acbb70a-9cd2-4048-9e51-35360dc7eacd",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 11,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "0345531b-64e9-40ab-a80b-5857b0e53752",
+			"name": "ALL",
+			"url": "http://localhost/eCommercePhp/api/users/read.php",
+			"time": 10,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"get all data - 200": true,
+				"check if array": true,
+				"check if value is correct": true,
+				"check if response has string requirement": true,
+				"check if response has correct data type": true
+			},
+			"testPassFailCounts": {
+				"get all data - 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"check if array": {
+					"pass": 1,
+					"fail": 0
+				},
+				"check if value is correct": {
+					"pass": 1,
+					"fail": 0
+				},
+				"check if response has string requirement": {
+					"pass": 1,
+					"fail": 0
+				},
+				"check if response has correct data type": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				10
+			],
+			"allTests": [
+				{
+					"get all data - 200": true,
+					"check if array": true,
+					"check if value is correct": true,
+					"check if response has string requirement": true,
+					"check if response has correct data type": true
+				}
+			]
+		},
+		{
+			"id": "2529f13d-9100-44d5-bc9e-12b75bd2638c",
+			"name": "CREATE USER",
+			"url": "http://localhost/eCommercePhp/api/users/create.php",
+			"time": 13,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Successful Post Request": true
+			},
+			"testPassFailCounts": {
+				"Successful Post Request": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				13
+			],
+			"allTests": [
+				{
+					"Successful Post Request": true
+				}
+			]
+		},
+		{
+			"id": "133274d0-49f5-4ab5-afb2-07f2814bf474",
+			"name": "GET WITH PARAMETER",
+			"url": "http://localhost/eCommercePhp/api/users/read_single.php?id=1",
+			"time": 32,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"get all data - 200": true,
+				"check if response has string requirement": true,
+				"check if response has correct data type": true
+			},
+			"testPassFailCounts": {
+				"get all data - 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"check if response has string requirement": {
+					"pass": 1,
+					"fail": 0
+				},
+				"check if response has correct data type": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				32
+			],
+			"allTests": [
+				{
+					"get all data - 200": true,
+					"check if response has string requirement": true,
+					"check if response has correct data type": true
+				}
+			]
+		},
+		{
+			"id": "c88a1474-487f-40bc-8ff9-c4adf74a254a",
+			"name": "UPDATE USERS",
+			"url": "http://localhost/eCommercePhp/api/users/update.php",
+			"time": 8,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Successful update Request": true
+			},
+			"testPassFailCounts": {
+				"Successful update Request": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				8
+			],
+			"allTests": [
+				{
+					"Successful update Request": true
+				}
+			]
+		},
+		{
+			"id": "755ec7b1-4f26-4e3e-9e29-0ae72ac00123",
+			"name": "DELETE USER",
+			"url": "http://localhost/eCommercePhp/api/users/delete.php",
+			"time": 8,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Successful Delete Request": true
+			},
+			"testPassFailCounts": {
+				"Successful Delete Request": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				8
+			],
+			"allTests": [
+				{
+					"Successful Delete Request": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 71,
+	"collection": {
+		"requests": [
+			{
+				"id": "0345531b-64e9-40ab-a80b-5857b0e53752",
+				"method": "GET"
+			},
+			{
+				"id": "2529f13d-9100-44d5-bc9e-12b75bd2638c",
+				"method": "POST"
+			},
+			{
+				"id": "133274d0-49f5-4ab5-afb2-07f2814bf474",
+				"method": "GET"
+			},
+			{
+				"id": "c88a1474-487f-40bc-8ff9-c4adf74a254a",
+				"method": "PUT"
+			},
+			{
+				"id": "755ec7b1-4f26-4e3e-9e29-0ae72ac00123",
+				"method": "DELETE"
+			}
+		]
+	}
+}

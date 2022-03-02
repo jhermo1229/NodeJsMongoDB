@@ -1,0 +1,209 @@
+{
+	"id": "a6cca925-01f6-4c09-9a83-78ca1e35a141",
+	"name": "Purchase_History Collection",
+	"timestamp": "2022-03-02T17:58:48.530Z",
+	"collection_id": "19650069-eeac0182-805e-46df-815a-a4a5b794e25e",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 10,
+	"totalFail": 1,
+	"results": [
+		{
+			"id": "e4d9e760-9198-4d33-9113-4394946b963a",
+			"name": "ALL",
+			"url": "http://localhost/eCommercePhp/api/purchase_history/read.php",
+			"time": 18,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"get all data - 200": true,
+				"check if array": true,
+				"check if value is correct": false,
+				"check if response has string requirement": true,
+				"check if response has correct data type": true
+			},
+			"testPassFailCounts": {
+				"get all data - 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"check if array": {
+					"pass": 1,
+					"fail": 0
+				},
+				"check if value is correct": {
+					"pass": 0,
+					"fail": 1
+				},
+				"check if response has string requirement": {
+					"pass": 1,
+					"fail": 0
+				},
+				"check if response has correct data type": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				18
+			],
+			"allTests": [
+				{
+					"get all data - 200": true,
+					"check if array": true,
+					"check if value is correct": false,
+					"check if response has string requirement": true,
+					"check if response has correct data type": true
+				}
+			]
+		},
+		{
+			"id": "7c7f1b3d-eb07-43cb-8360-c777e0c70020",
+			"name": "CREATE PURCHASE HISTORY",
+			"url": "http://localhost/eCommercePhp/api/purchase_history/create.php",
+			"time": 31,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Successful Post Request": true
+			},
+			"testPassFailCounts": {
+				"Successful Post Request": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				31
+			],
+			"allTests": [
+				{
+					"Successful Post Request": true
+				}
+			]
+		},
+		{
+			"id": "1ce86815-321e-4b98-8685-607ac08a1bee",
+			"name": "GET WITH PARAMETER",
+			"url": "http://localhost/eCommercePhp/api/purchase_history/read_single.php?id=12",
+			"time": 16,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"get all data - 200": true,
+				"check if response has string requirement": true,
+				"check if response has correct data type": true
+			},
+			"testPassFailCounts": {
+				"get all data - 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"check if response has string requirement": {
+					"pass": 1,
+					"fail": 0
+				},
+				"check if response has correct data type": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				16
+			],
+			"allTests": [
+				{
+					"get all data - 200": true,
+					"check if response has string requirement": true,
+					"check if response has correct data type": true
+				}
+			]
+		},
+		{
+			"id": "d2b09fd2-4ad2-4110-9926-4b5ccce96b0d",
+			"name": "UPDATE PURCHASE HISTORY",
+			"url": "http://localhost/eCommercePhp/api/purchase_history/update.php",
+			"time": 5,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"update data - 200": true
+			},
+			"testPassFailCounts": {
+				"update data - 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"update data - 200": true
+				}
+			]
+		},
+		{
+			"id": "c58ccc32-e06a-4d81-8e91-35ade3fe6c0e",
+			"name": "DELETE PURCHASE HISTORY",
+			"url": "http://localhost/eCommercePhp/api/purchase_history/delete.php",
+			"time": 33,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"delete data - 200": true
+			},
+			"testPassFailCounts": {
+				"delete data - 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				33
+			],
+			"allTests": [
+				{
+					"delete data - 200": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 103,
+	"collection": {
+		"requests": [
+			{
+				"id": "e4d9e760-9198-4d33-9113-4394946b963a",
+				"method": "GET"
+			},
+			{
+				"id": "7c7f1b3d-eb07-43cb-8360-c777e0c70020",
+				"method": "POST"
+			},
+			{
+				"id": "1ce86815-321e-4b98-8685-607ac08a1bee",
+				"method": "GET"
+			},
+			{
+				"id": "d2b09fd2-4ad2-4110-9926-4b5ccce96b0d",
+				"method": "PUT"
+			},
+			{
+				"id": "c58ccc32-e06a-4d81-8e91-35ade3fe6c0e",
+				"method": "DELETE"
+			}
+		]
+	}
+}
