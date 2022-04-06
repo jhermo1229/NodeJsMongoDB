@@ -1,6 +1,6 @@
 # NodeJS_MongoDB_Postman
 
-Simple connection of NodeJS to MongoDB databsase
+Simple connection of NodeJS to MongoDB database
 
 Can be tested using POSTMAN - http://localhost/api/post/read.php
 
